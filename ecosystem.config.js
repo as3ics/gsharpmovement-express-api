@@ -1,7 +1,7 @@
 module.exports = {
   apps: [{
     name: 'weshallprevail-api',
-    script: '/home/ubuntu/server/current/dist/weshallprevail-api/weshallprevail-api.js',
+    script: 'dist/weshallprevail-api/weshallprevail-api.js',
     env_production: {
       NODE_ENV: "production",
       DEBUG: true,
