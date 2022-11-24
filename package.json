@@ -8,7 +8,8 @@
     "serve": "ts-node src/weshallprevail-api.ts --watch",
     "typecheck": "tsc -p . --noEmit true",
     "deploy": "pm2 deploy production",
-    "deploy:setup": "pm2 deploy production setup"
+    "deploy:setup": "pm2 deploy production setup",
+    "start": "pm2 startOrRestart ecosystem.config.js weshallprevail-api"
   },
   "repository": {
     "type": "git",

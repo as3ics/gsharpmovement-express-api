@@ -22,9 +22,7 @@ export class DownloadsController implements BaseController {
                 .send({ error: { validation: validation.toLocaleString() } });
 
         try {
-            let download = await Download.create({
-                ip: req.ipAddress
-            });
+            let download = await Download.create(req.body);
             download.save();
             download = await Download.findById(download._id);
 
