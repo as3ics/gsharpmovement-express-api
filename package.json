@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "node ./dist/weshallprevail-api/weshallprevail-api.js",
+    "test": "node dist/weshallprevail-api/weshallprevail-api.js",
     "build": "tsc",
-    "start": "ts-node ./src/weshallprevail-api.ts --watch"
+    "serve": "ts-node src/weshallprevail-api.ts --watch",
+    "typecheck": "tsc -p . --noEmit true"
   },
   "repository": {
     "type": "git",

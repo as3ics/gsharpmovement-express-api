@@ -14,4 +14,4 @@ pm2 kill
 echo "Setting environment variables"
 source .env
 echo "Starting application..."
-pm2 start dist/weshallprevail-api/weshallprevail-api.js
+pm2 start weshallprevail-api
