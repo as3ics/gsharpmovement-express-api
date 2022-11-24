@@ -48,8 +48,8 @@ module.exports = {
       "host": ["ec2-18-219-65-101.us-east-2.compute.amazonaws.com"],
       "ref": "origin/master",
       "repo": "https://github.com/as3ics/weshallprevail-api.git",
-      "path": "/home/ubuntu/server",
-      "post-deploy": "[ -d dist ] && rm -r dist ; [ -d  node_modules ] && rm -r node_modules ; npm ci && npx tsc && pm2 startOrRestart ecosystem.config.js --env production"
+      "path": "/home/ubuntu/",
+      "post-deploy": "[ -d dist ] && rm -r dist ; [ -d  node_modules ] && rm -r node_modules ; npm ci && npx tsc && pm2 startOrRestart ecosystem.config.js weshallprevail-api --env production"
     }
   }
 };
