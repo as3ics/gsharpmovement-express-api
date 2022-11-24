@@ -14,4 +14,4 @@ pm2 kill
 echo "Setting environment variables"
 source .env
 echo "Starting application..."
-pm2 start weshallprevail-api
+pm2 start ecosystem.config.js weshallprevail-api

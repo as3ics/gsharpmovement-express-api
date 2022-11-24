@@ -17,7 +17,7 @@ export interface IDownload {
 // 2. Create a Schema corresponding to the document interface.
 const DownloadSchema = new Schema(
   {
-    ip: { type: String, required: true },
+    ip: { type: String },
   },
   {
     versionKey: false,
