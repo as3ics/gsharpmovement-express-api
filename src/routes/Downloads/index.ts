@@ -1,1 +1,0 @@
-export { router as downloadsRouter } from "./Download.routes"
