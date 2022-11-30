@@ -14,6 +14,8 @@ export class EmailsController implements BaseController {
   ) {
     const validation = [];
 
+    console.log(req.body);
+
     if (!req?.body?.email) validation.push("req.body.email");
 
     if (validation.length !== 0)
@@ -22,10 +24,10 @@ export class EmailsController implements BaseController {
         .send({ error: { validation: validation.toLocaleString() } });
 
     try {
-      let email = await emails(db).insert({
+      await emails(db).insert({
         email: req.body.email,
-        id: undefined,
       });
+      let email = await emails(db).findOne({ email: req.body.email });
       return res.status(201).send(email);
     } catch (error) {
       return res.status(400).send(error);

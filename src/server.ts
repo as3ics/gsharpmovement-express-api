@@ -12,7 +12,7 @@
  *
  */
 
-import { APP_PORT, APP_LOGGING, APP_VERSION } from "./config";
+import { APP_PORT, APP_LOGGING } from "./config";
 
 import express from "express";
 
@@ -21,8 +21,6 @@ import { emailsRouter } from "./routes";
 import { Server } from "http";
 
 export const app = express();
-
-app.use("/email", emailsRouter);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -44,12 +42,13 @@ app.get("/", (req, res) => {
   const response = {
     status: "OK",
     environment: process.env.NODE_ENV,
-    version: APP_VERSION,
     timestamp: new Date().toLocaleString(),
   };
 
   res.status(200).send(response);
 });
+
+app.use("/email", emailsRouter);
 
 export let server: Server;
 
