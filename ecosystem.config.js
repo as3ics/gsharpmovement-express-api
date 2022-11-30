@@ -45,7 +45,7 @@ module.exports = {
     production: {
       "key": "~/.as3ics/weshallprevail.pem",
       "user": "ubuntu",
-      "host": ["ec2-18-219-65-101.us-east-2.compute.amazonaws.com"],
+      "host": ["ec2-3-129-45-159.us-east-2.compute.amazonaws.com"],
       "ref": "origin/master",
       "repo": "https://github.com/as3ics/weshallprevail-api.git",
       "path": "/home/ubuntu/",
