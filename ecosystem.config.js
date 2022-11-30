@@ -38,8 +38,7 @@ module.exports = {
       "host": ["ec2-18-116-12-48.us-east-2.compute.amazonaws.com"],
       "ref": "origin/master",
       "repo": "https://github.com/as3ics/weshallprevail-api.git",
-      "path": "/home/ubuntu/",
-      "post-deploy": ""
+      "path": "/home/ubuntu/"
     }
   }
 };
