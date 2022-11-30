@@ -14,7 +14,21 @@
 
 import { connect as mongoose_connect } from "mongoose";
 
-import { MONGODB_URL } from "./config";
+import createConnectionPool, { sql } from "@databases/mysql";
+import tables from "@databases/mysql-typed";
+import DatabaseSchema, { serializeValue } from "./__generated__";
+import { MYSQL_HOST, MONGODB_URL } from "./config";
+
+export { sql };
+
+const db = createConnectionPool(MYSQL_HOST);
+export default db;
+
+// You can list whatever tables you actually have here:
+const { emails } = tables<DatabaseSchema>({
+  serializeValue,
+});
+export { emails };
 
 /**
  *
@@ -23,11 +37,11 @@ import { MONGODB_URL } from "./config";
  * @returns Promise<boolean>
  *
  */
-export const connect = async (): Promise<boolean> => {
-    try {
-        await mongoose_connect(MONGODB_URL);
-        return true;
-    } catch (error) {
-        return false;
-    }
+export const connectMongoDB = async (): Promise<boolean> => {
+  try {
+    await mongoose_connect(MONGODB_URL);
+    return true;
+  } catch (error) {
+    return false;
+  }
 };

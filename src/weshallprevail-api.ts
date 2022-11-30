@@ -1,9 +1,11 @@
-import { connect } from "./database";
-import { start } from "./server"
+/** @format */
+import * as dotenv from "dotenv";
+dotenv.config();
+
+import { start } from "./server";
 
 async function go() {
-    connect();
-    start();
+  start();
 }
 
 go();

@@ -1,44 +1,34 @@
+/** @format */
+
 module.exports = {
-  apps: [{
-    name: 'weshallprevail-api',
-    script: 'dist/weshallprevail-api/weshallprevail-api.js',
-    env_production: {
-      NODE_ENV: "production",
-      DEBUG: true,
-      ENVIRONMENT: "production",
-      PRODUCTION: true,
-      DEBUG_CACHE: false,
-      APP_URL: "https://api.gsharpmovement.com",
-      APP_NAME: "weshallprevail-api",
-      APP_HOSTNAME: "127.0.0.1",
-      APP_PORT: 3000,
-      APP_VERSION: "0.0.1",
-      APP_LOGGING: true,
-      MONGODB_URL: "mongodb://dbuser:amarbuff@127.0.0.1:27017/?authSource=admin",
-      MONGODB_DATABASE: "weshallprevail",
-      APP_BASE_URL: "https://gsharpmovement.com",
-      SECRET_KEY: "scott_bakula",
-      MAX_FILESIZE_MB: 5
+  apps: [
+    {
+      name: "weshallprevail-api",
+      script: "dist/weshallprevail-api/weshallprevail-api.js",
+      env_production: {
+        NODE_ENV: "production",
+        DEBUG: true,
+        ENVIRONMENT: "production",
+        PRODUCTION: true,
+        APP_PORT: 3000,
+        APP_LOGGING: true,
+        MYSQL_HOST:
+          "mysql://admin:amarbuff@gsharpmovement-db.cbfnbhfmnv5p.us-east-2.rds.amazonaws.com:3305/gsharpmovement",
+        MONGODB_URL: " ",
+      },
+      env_development: {
+        NODE_ENV: "development",
+        DEBUG: true,
+        ENVIRONMENT: "development",
+        PRODUCTION: false,
+        APP_PORT: 3000,
+        APP_LOGGING: true,
+        MYSQL_HOST:
+          "mysql://admin:amarbuff@gsharpmovement-db.cbfnbhfmnv5p.us-east-2.rds.amazonaws.com:3305/gsharpmovement",
+        MONGODB_URL: " ",
+      },
     },
-    env_development: {
-      NODE_ENV: "production",
-      DEBUG: true,
-      ENVIRONMENT: "production",
-      PRODUCTION: true,
-      DEBUG_CACHE: false,
-      APP_URL: "https://api.gsharpmovement.com",
-      APP_NAME: "weshallprevail-api",
-      APP_HOSTNAME: "127.0.0.1",
-      APP_PORT: 3000,
-      APP_VERSION: "0.0.1",
-      APP_LOGGING: true,
-      MONGODB_URL: "mongodb://dbuser:amarbuff@18.219.65.101:27017/?authSource=admin",
-      MONGODB_DATABASE: "weshallprevail",
-      APP_BASE_URL: "https://gsharpmovement.com",
-      SECRET_KEY: "scott_bakula",
-      MAX_FILESIZE_MB: 5
-    }
-  }],
+  ],
 
   // Deployment Configuration
   deploy: {
