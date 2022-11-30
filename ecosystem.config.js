@@ -14,6 +14,7 @@ module.exports = {
         APP_LOGGING: true,
         MYSQL_HOST:
           "mysql://admin:amarbuff@gsharpmovement-db.cbfnbhfmnv5p.us-east-2.rds.amazonaws.com:3305/gsharpmovement",
+        MONGODB_URL: " ",
       },
       env_development: {
         NODE_ENV: "development",
@@ -24,6 +25,7 @@ module.exports = {
         APP_LOGGING: true,
         MYSQL_HOST:
           "mysql://admin:amarbuff@gsharpmovement-db.cbfnbhfmnv5p.us-east-2.rds.amazonaws.com:3305/gsharpmovement",
+        MONGODB_URL: " ",
       },
     },
   ],
