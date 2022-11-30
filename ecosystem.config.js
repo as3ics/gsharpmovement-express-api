@@ -39,7 +39,7 @@ module.exports = {
       "ref": "origin/master",
       "repo": "https://github.com/as3ics/weshallprevail-api.git",
       "path": "/home/ubuntu/",
-      "post-deploy": "npm i && npm run build && npm run start"
+      "post-deploy": ""
     }
   }
 };
