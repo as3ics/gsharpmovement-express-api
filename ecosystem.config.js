@@ -38,7 +38,7 @@ module.exports = {
       repo: "https://github.com/as3ics/weshallprevail-api.git",
       path: "/home/ubuntu/",
       "post-deploy":
-        "[ -d dist ] && rm -r dist ; [ -d  node_modules ] && rm -r node_modules ; npm ci && npm run build && pm2 startOrRestart ecosystem.config.js weshallprevail-api --env production",
+        "[ -d dist ] && rm -r dist ; npm ci && npm run build && pm2 startOrRestart ecosystem.config.js weshallprevail-api --env production",
     },
   },
 };

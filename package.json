@@ -9,7 +9,8 @@
     "typecheck": "tsc -p . --noEmit true",
     "deploy": "pm2 deploy production",
     "deploy:setup": "pm2 deploy production setup",
-    "start": "pm2 startOrRestart ecosystem.config.js weshallprevail-api"
+    "start": "pm2 startOrRestart ecosystem.config.js weshallprevail-api",
+    "env": "./copy.sh && pm2 startOrRestart ecosystem.config.js weshallprevail-api"
   },
   "repository": {
     "type": "git",
