@@ -12,8 +12,6 @@
  *
  */
 
-import { connect as mongoose_connect } from "mongoose";
-
 import createConnectionPool, { sql } from "@databases/mysql";
 import tables from "@databases/mysql-typed";
 import DatabaseSchema, { serializeValue } from "./__generated__";
@@ -29,19 +27,3 @@ const { emails } = tables<DatabaseSchema>({
   serializeValue,
 });
 export { emails };
-
-/**
- *
- * @abstract Connects to the mongodb database or cluster using mongoose based on the MONGODB_URL environment variable
- *
- * @returns Promise<boolean>
- *
- */
-export const connectMongoDB = async (): Promise<boolean> => {
-  try {
-    await mongoose_connect(MONGODB_URL);
-    return true;
-  } catch (error) {
-    return false;
-  }
-};
