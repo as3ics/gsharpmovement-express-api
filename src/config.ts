@@ -89,6 +89,7 @@ export const PRODUCTION = boolEnv("PRODUCTION", false);
 
 export const APP_PORT = numberEnv("APP_PORT", 3000);
 export const APP_LOGGING = boolEnv("APP_LOGGING", true);
+export const APP_VERSION = requireEnv("APP_VERSION", "0.0.1");
 
 export const MONGODB_URL = requireEnv("MONGODB_URL");
 
