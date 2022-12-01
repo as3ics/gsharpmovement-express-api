@@ -37,7 +37,7 @@ module.exports = {
       "ref": "origin/master",
       "repo": "https://github.com/as3ics/weshallprevail-api.git",
       "path": "/home/ubuntu/",
-      "pre-setup": "echo 'commands or local script path to be run on the host before the setup process starts' && sudo rm -r ~/source",
+      "pre-setup": "echo 'commands or local script path to be run on the host before the setup process starts' && [ -d ~/source ] && sudo rm -r ~/source",
       "post-setup": "echo 'commands or a script path to be run on the host after cloning the repo' && npm i && npm build",
       "pre-deploy": "",
       "post-deploy": "npm run start",
