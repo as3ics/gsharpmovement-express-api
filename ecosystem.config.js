@@ -3,7 +3,7 @@
 module.exports = {
   apps: [
     {
-      name: "weshallprevail-api",
+      name: "api",
       script: "api.js",
       env_production: {
         NODE_ENV: "production",

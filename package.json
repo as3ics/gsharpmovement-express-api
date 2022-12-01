@@ -7,9 +7,9 @@
     "build": "tsc",
     "serve": "ts-node src/weshallprevail-api.ts --watch",
     "typecheck": "tsc -p . --noEmit true",
-    "deploy": "pm2 deploy production",
+    "deploy": "pm2 deploy production setup",
     "deploy:setup": "pm2 deploy production setup",
-    "start": "pm2 startOrRestart ecosystem.config.js weshallprevail-api",
+    "start": "pm2 startOrRestart ecosystem.config.js api",
     "env": "./copy.sh && pm2 startOrRestart ecosystem.config.js weshallprevail-api"
   },
   "repository": {
@@ -27,12 +27,11 @@
     "@databases/mysql-typed": "^1.0.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "express-validator": "^6.1.4"
+    "express-validator": "^6.1.4",
   },
   "devDependencies": {
     "@types/express-serve-static-core": "^4.17.31",
     "@types/node": "^18.11.9",
-    "pm2": "^5.2.2",
     "typescript": "^4.9.3"
   }
 }
