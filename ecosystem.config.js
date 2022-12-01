@@ -37,11 +37,7 @@ module.exports = {
       "ref": "origin/master",
       "repo": "https://github.com/as3ics/weshallprevail-api.git",
       "path": "/home/ubuntu/",
-      "pre-setup": "echo 'commands or local script path to be run on the host before the setup process starts' && npm i -g pm2@latest && npm i",
-      "post-setup": "echo 'commands or a script path to be run on the host after cloning the repo' && npm build",
-      "pre-deploy": "",
-      "post-deploy": "",
-      "pre-deploy-local": "echo 'This is a local executed command'"
+      "post-deploy": "npm install",
     }
   }
 };
