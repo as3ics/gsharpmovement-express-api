@@ -40,7 +40,7 @@ module.exports = {
       "pre-setup": "echo 'commands or local script path to be run on the host before the setup process starts' && npm i",
       "post-setup": "echo 'commands or a script path to be run on the host after cloning the repo' && npm build",
       "pre-deploy": "",
-      "post-deploy": "pm2 start production",
+      "post-deploy": "",
       "pre-deploy-local": "echo 'This is a local executed command'"
     }
   }
