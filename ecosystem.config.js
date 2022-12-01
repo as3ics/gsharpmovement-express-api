@@ -4,7 +4,7 @@ module.exports = {
   apps: [
     {
       name: "weshallprevail-api",
-      script: "dist/weshallprevail-api/api.js",
+      script: "api.js",
       env_production: {
         NODE_ENV: "production",
         DEBUG: true,
@@ -14,7 +14,6 @@ module.exports = {
         APP_LOGGING: true,
         MYSQL_HOST:
           "mysql://admin:amarbuff@gsharpmovement-db.cbfnbhfmnv5p.us-east-2.rds.amazonaws.com:3305/gsharpmovement",
-        MONGODB_URL: " ",
       },
       env_development: {
         NODE_ENV: "development",
@@ -25,7 +24,6 @@ module.exports = {
         APP_LOGGING: true,
         MYSQL_HOST:
           "mysql://admin:amarbuff@gsharpmovement-db.cbfnbhfmnv5p.us-east-2.rds.amazonaws.com:3305/gsharpmovement",
-        MONGODB_URL: " ",
       },
     },
   ],
@@ -39,7 +37,7 @@ module.exports = {
       "ref": "origin/master",
       "repo": "https://github.com/as3ics/weshallprevail-api.git",
       "path": "/home/ubuntu/",
-      "post-deploy": "npm ci && npm run build && npm run start"
+      "post-deploy": "npm install"
     }
   }
 };
