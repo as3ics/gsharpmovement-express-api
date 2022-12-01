@@ -3,6 +3,7 @@
 import { Request, Response } from "express";
 import { ParamsDictionary } from "express-serve-static-core";
 import { ParsedQs } from "qs";
+import { sql } from "@databases/mysql"
 
 import { BaseController } from "../_BaseController";
 import db, { emails } from "../../database";
@@ -60,7 +61,7 @@ export class EmailsController implements BaseController {
     res: Response<any, Record<string, any>>
   ) {
     try {
-      const mails = await emails(db).find({});
+      const mails = await db.query(sql`SELECT * FROM emails;`);
       return res.status(200).send(mails);
     } catch (error) {
       return res.status(400).send(error);

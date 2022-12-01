@@ -1,9 +1,9 @@
 {
-  "name": "weshallprevail-api",
+  "name": "gsharpmovement-api",
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "node dist/weshallprevail-api/weshallprevail-api.js",
+    "test": "node dist/weshallprevail-api/api.js",
     "build": "tsc",
     "serve": "ts-node src/weshallprevail-api.ts --watch",
     "typecheck": "tsc -p . --noEmit true",
