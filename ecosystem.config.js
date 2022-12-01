@@ -4,7 +4,7 @@ module.exports = {
   apps: [
     {
       name: "weshallprevail-api",
-      script: "dist/weshallprevail-api/weshallprevail-api.js",
+      script: "src/api.js",
       env_production: {
         NODE_ENV: "production",
         DEBUG: true,
