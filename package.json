@@ -27,7 +27,7 @@
     "@databases/mysql-typed": "^1.0.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "express-validator": "^6.1.4",
+    "express-validator": "^6.1.4"
   },
   "devDependencies": {
     "@types/express-serve-static-core": "^4.17.31",
