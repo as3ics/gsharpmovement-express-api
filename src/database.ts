@@ -15,9 +15,7 @@
 import createConnectionPool, { sql } from "@databases/mysql";
 import tables from "@databases/mysql-typed";
 import DatabaseSchema, { serializeValue } from "./__generated__";
-import { MYSQL_HOST, MONGODB_URL } from "./config";
-
-export { sql };
+import { MYSQL_HOST } from "./config";
 
 const db = createConnectionPool(MYSQL_HOST);
 export default db;

@@ -12,7 +12,7 @@
  *
  */
 
-import { APP_PORT, APP_LOGGING } from "./config";
+import { APP_PORT, APP_LOGGING, APP_VERSION } from "./config";
 
 import express from "express";
 import cors from "cors";
@@ -44,6 +44,7 @@ app.get("/", (req, res) => {
   const response = {
     status: "OK",
     environment: process.env.NODE_ENV,
+    version: APP_VERSION,
     timestamp: new Date().toLocaleString(),
   };
 

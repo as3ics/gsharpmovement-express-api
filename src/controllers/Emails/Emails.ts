@@ -26,7 +26,7 @@ export class EmailsController implements BaseController {
 
     try {
       await emails(db).insert({
-        email: req.body.email,
+        ...req.body,
       });
       let email = await emails(db).findOne({ email: req.body.email });
       return res.status(201).send(email);

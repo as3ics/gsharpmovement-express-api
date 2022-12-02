@@ -12,36 +12,12 @@
  * @abstract Initializes the mongoose mongodb databse connection
  *
  */
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.emails = exports.sql = void 0;
-const mysql_1 = __importStar(require("@databases/mysql"));
-Object.defineProperty(exports, "sql", { enumerable: true, get: function () { return mysql_1.sql; } });
+exports.emails = void 0;
+const mysql_1 = __importDefault(require("@databases/mysql"));
 const mysql_typed_1 = __importDefault(require("@databases/mysql-typed"));
 const __generated__1 = require("./__generated__");
 const config_1 = require("./config");
@@ -52,4 +28,4 @@ const { emails } = (0, mysql_typed_1.default)({
     serializeValue: __generated__1.serializeValue,
 });
 exports.emails = emails;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGF0YWJhc2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvZGF0YWJhc2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBOzs7Ozs7Ozs7Ozs7R0FZRzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFFSCwwREFBNkQ7QUFLcEQsb0ZBTHNCLFdBQUcsT0FLdEI7QUFKWix5RUFBNEM7QUFDNUMsa0RBQWlFO0FBQ2pFLHFDQUFtRDtBQUluRCxNQUFNLEVBQUUsR0FBRyxJQUFBLGVBQW9CLEVBQUMsbUJBQVUsQ0FBQyxDQUFDO0FBQzVDLGtCQUFlLEVBQUUsQ0FBQztBQUVsQix1REFBdUQ7QUFDdkQsTUFBTSxFQUFFLE1BQU0sRUFBRSxHQUFHLElBQUEscUJBQU0sRUFBaUI7SUFDeEMsY0FBYyxFQUFkLDZCQUFjO0NBQ2YsQ0FBQyxDQUFDO0FBQ00sd0JBQU0ifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGF0YWJhc2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvZGF0YWJhc2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBOzs7Ozs7Ozs7Ozs7R0FZRzs7Ozs7O0FBRUgsNkRBQTZEO0FBQzdELHlFQUE0QztBQUM1QyxrREFBaUU7QUFDakUscUNBQXNDO0FBRXRDLE1BQU0sRUFBRSxHQUFHLElBQUEsZUFBb0IsRUFBQyxtQkFBVSxDQUFDLENBQUM7QUFDNUMsa0JBQWUsRUFBRSxDQUFDO0FBRWxCLHVEQUF1RDtBQUN2RCxNQUFNLEVBQUUsTUFBTSxFQUFFLEdBQUcsSUFBQSxxQkFBTSxFQUFpQjtJQUN4QyxjQUFjLEVBQWQsNkJBQWM7Q0FDZixDQUFDLENBQUM7QUFDTSx3QkFBTSJ9
