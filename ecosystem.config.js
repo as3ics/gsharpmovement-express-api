@@ -4,7 +4,7 @@ module.exports = {
   apps: [
     {
       name: "api",
-      script: "dist/weshallprevail-api/api.js",
+      script: "dist/gsharpmovement-api/api.js",
       env_production: {
         NODE_ENV: "production",
         DEBUG: true,
@@ -31,11 +31,11 @@ module.exports = {
   // Deployment Configuration
   deploy: {
     production: {
-      "key": "~/.as3ics/weshallprevail.pem",
+      "key": "~/.as3ics/gsharpmovement.pem",
       "user": "ubuntu",
       "host": ["ec2-18-116-12-48.us-east-2.compute.amazonaws.com"],
       "ref": "origin/master",
-      "repo": "https://github.com/as3ics/weshallprevail-api.git",
+      "repo": "https://github.com/as3ics/gsharpmovement-api.git",
       "path": "/home/ubuntu/",
       "post-deploy": "npm install",
     }

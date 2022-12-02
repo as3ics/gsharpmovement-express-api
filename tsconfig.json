@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": ["esnext", "ES2020"],
+    "lib": [
+      "esnext",
+      "ES2020"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -14,17 +17,29 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "noEmit": false,
-    "outDir": "./dist/weshallprevail-api",
+    "outDir": "./dist/gsharpmovement-api",
     "inlineSourceMap": true,
     "strictNullChecks": false,
     "baseUrl": "./src",
-    "typeRoots": ["./node_modules/@types/", "@types"]
+    "typeRoots": [
+      "./node_modules/@types/",
+      "@types"
+    ]
   },
   "ts-node": {
     "files": true,
     "inlineSourceMap": true,
     "transpileOnly": true
   },
-  "include": ["@types", "src", "scripts"],
-  "exclude": ["node_modules", ".vscode", ".git", "legacy"]
+  "include": [
+    "@types",
+    "src",
+    "scripts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".vscode",
+    ".git",
+    "legacy"
+  ]
 }
