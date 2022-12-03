@@ -21,7 +21,7 @@ const db = createConnectionPool(MYSQL_HOST);
 export default db;
 
 // You can list whatever tables you actually have here:
-const { emails } = tables<DatabaseSchema>({
+const { emails, hits } = tables<DatabaseSchema>({
   serializeValue,
 });
-export { emails };
+export { emails, hits };

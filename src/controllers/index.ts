@@ -1,3 +1,5 @@
 /** @format */
+/** @format */
 
-export { emailsController } from "./Emails";
+export { emailsController } from "./emails";
+export { hitsController } from "./hits";

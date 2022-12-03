@@ -17,7 +17,7 @@ import { APP_PORT, APP_LOGGING, APP_VERSION } from "./config";
 import express from "express";
 import cors from "cors";
 
-import { emailsRouter } from "./routes";
+import { emailsRouter, hitsRouter } from "./routes";
 
 import { Server } from "http";
 
@@ -52,6 +52,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/email", emailsRouter);
+app.use("/hit", hitsRouter);
 
 export let server: Server;
 

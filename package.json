@@ -1,6 +1,6 @@
 {
   "name": "gsharpmovement-api",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "",
   "scripts": {
     "test": "node dist/gsharpmovement-api/api.js",
@@ -10,7 +10,8 @@
     "deploy": "pm2 deploy production setup",
     "deploy:setup": "pm2 deploy production setup",
     "start": "pm2 startOrRestart ecosystem.config.js api",
-    "env": "./copy.sh && pm2 startOrRestart ecosystem.config.js api"
+    "env": "./copy.sh && pm2 startOrRestart ecosystem.config.js api",
+    "generate": "npx @databases/mysql-schema-cli --database mysql://admin:amarbuff@as3ics-db.cbfnbhfmnv5p.us-east-2.rds.amazonaws.com:3306/gsharpmovement --directory src/__generated__"
   },
   "repository": {
     "type": "git",

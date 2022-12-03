@@ -6,16 +6,14 @@ import { ParsedQs } from "qs";
 import { sql } from "@databases/mysql";
 
 import { BaseController } from "../_BaseController";
-import db, { emails } from "../../database";
+import db, { hits } from "../../database";
 
-export class EmailsController implements BaseController {
+export class HitsController implements BaseController {
   public async create(
     req: Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>,
     res: Response<any, Record<string, any>>
   ) {
     const validation = [];
-
-    if (!req?.body?.email) validation.push("req.body.email");
 
     if (validation.length !== 0)
       return res
@@ -23,11 +21,10 @@ export class EmailsController implements BaseController {
         .send({ error: { validation: validation.toLocaleString() } });
 
     try {
-      await emails(db).insert({
+      await hits(db).insert({
         ...req.body,
       });
-      let email = await emails(db).findOne({ email: req.body.email });
-      return res.status(201).send(email);
+      return res.status(201).send();
     } catch (error) {
       return res.status(400).send(error);
     }
@@ -46,9 +43,9 @@ export class EmailsController implements BaseController {
         .send({ error: { validation: validation.toLocaleString() } });
 
     try {
-      const email = await emails(db).findOne({ id: req.params.id });
-      return email
-        ? res.status(200).send(email)
+      const hit = await hits(db).findOne({ id: req.params.id });
+      return hit
+        ? res.status(200).send(hit)
         : res.status(404).send({ error: "not found." });
     } catch (error) {
       return res.status(400).send(error);
@@ -59,8 +56,8 @@ export class EmailsController implements BaseController {
     res: Response<any, Record<string, any>>
   ) {
     try {
-      const mails = await db.query(sql`SELECT * FROM emails;`);
-      return res.status(200).send(mails);
+      const hits = await db.query(sql`SELECT * FROM hits;`);
+      return res.status(200).send(hits);
     } catch (error) {
       return res.status(400).send(error);
     }
@@ -79,10 +76,10 @@ export class EmailsController implements BaseController {
         .send({ error: { validation: validation.toLocaleString() } });
 
     try {
-      let email = await emails(db).findOne({ id: req.params.id });
-      for (const record in req.body) email[record] = req.body[record];
-      await emails(db).update({ id: req.params.id }, { ...email });
-      return res.status(200).send(email);
+      let hit = await hits(db).findOne({ id: req.params.id });
+      for (const record in req.body) hit[record] = req.body[record];
+      await hits(db).update({ id: req.params.id }, { ...hit });
+      return res.status(200).send(hit);
     } catch (error) {
       return res.status(400).send(error);
     }
@@ -101,7 +98,7 @@ export class EmailsController implements BaseController {
         .send({ error: { validation: validation.toLocaleString() } });
 
     try {
-      const response = await emails(db).delete({
+      const response = await hits(db).delete({
         id: req.params.id,
       });
       return res.status(200).send(response);
@@ -115,12 +112,12 @@ export class EmailsController implements BaseController {
     res: Response<any, Record<string, any>>
   ) {
     try {
-      const mails = await db.query(sql`SELECT * FROM emails;`);
-      return res.status(200).send({ emails: mails.length });
+      const hits = await db.query(sql`SELECT * FROM hits;`);
+      return res.status(200).send({ hits: hits.length });
     } catch (error) {
       return res.status(400).send(error);
     }
   }
 }
 
-export const emailsController = new EmailsController();
+export const hitsController = new HitsController();
