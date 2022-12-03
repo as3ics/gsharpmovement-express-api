@@ -1,3 +1,3 @@
 /** @format */
 
-export { router as emailsRouter } from "./email.routes";
+export { router as emailsRouter } from "./emails.routes";
